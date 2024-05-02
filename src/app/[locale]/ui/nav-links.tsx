@@ -25,12 +25,12 @@ export default function NavLinks() {
   return (
     <div className='flex items-center'>
       <span className='inline-block cursor-pointer p-3 lg:hidden' onClick={() => setShow(true)}>
-        <Bars3Icon className='size-6 text-dark' />
+        <Bars3Icon className='size-6' />
       </span>
 
       <nav
         className={clsx(
-          'fixed right-0 top-0 z-20 flex h-screen w-60 flex-col gap-2 bg-white p-4 transition-transform lg:static lg:h-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:items-center lg:bg-transparent lg:p-0',
+          'fixed right-0 top-0 z-20 flex h-screen w-60 flex-col gap-2 bg-white p-4 transition-all duration-500 lg:static lg:h-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:items-center lg:bg-transparent lg:p-0',
           {
             'translate-x-full': !show,
             'translate-x-0': show,

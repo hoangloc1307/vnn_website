@@ -4,8 +4,6 @@ import NavLinks from '@/app/[locale]/ui/nav-links';
 import useScrollPosition from '@/hooks/useScrollPosition';
 import { Link } from '@/navigation';
 import clsx from 'clsx';
-import _pick from 'lodash/pick';
-import { NextIntlClientProvider, useMessages } from 'next-intl';
 import Image from 'next/image';
 import { twMerge } from 'tailwind-merge';
 
@@ -14,14 +12,17 @@ export default function Header() {
 
   return (
     <header
-      className={clsx('sticky top-0 z-50 border-b bg-gradient-to-b from-[#94D9FF] to-white transition-shadow', {
-        'lg:drop-shadow-md': position !== 0,
-      })}
+      className={clsx(
+        'fixed left-0 top-0  z-50 w-full border-b bg-gradient-to-b from-[#94D9FF] to-white transition-shadow',
+        {
+          'lg:drop-shadow-md': position !== 0,
+        },
+      )}
     >
       <div className='vnn-container'>
         <div
           className={twMerge(
-            clsx('flex items-center justify-between py-1 transition-all', {
+            clsx('flex items-center justify-between py-1 transition-all duration-500', {
               'lg:py-4': position === 0,
             }),
           )}

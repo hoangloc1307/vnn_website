@@ -1,4 +1,4 @@
-import { locales } from '@/config';
+import { locales } from '@/constants/locales';
 import { getRequestConfig } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 

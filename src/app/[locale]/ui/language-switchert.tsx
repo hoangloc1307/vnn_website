@@ -1,6 +1,6 @@
 'use client';
 
-import { locales } from '@/config';
+import { locales } from '@/constants/locales';
 import { Link, usePathname } from '@/navigation';
 import Image from 'next/image';
 

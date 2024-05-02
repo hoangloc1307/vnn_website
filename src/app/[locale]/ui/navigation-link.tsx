@@ -12,7 +12,7 @@ export default function NavigationLink({ href, ...rest }: ComponentProps<typeof 
 
   return (
     <Link
-      className={clsx('block px-4 py-2 text-sm font-medium capitalize text-dark lg:px-3 lg:py-1', {
+      className={clsx('block px-4 py-2 text-sm font-medium capitalize lg:px-3 lg:py-1', {
         'rounded bg-primary text-white': isActive,
         'hover:text-primary': !isActive,
       })}
