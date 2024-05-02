@@ -1,5 +1,10 @@
 {
-  "Index": {
-    "title": "Hello world!"
+  "NavLinks": {
+    "about-us": "About Us",
+    "products": "Our Products",
+    "news": "News Release",
+    "csr": "Our CSR",
+    "jobs": "Career Development",
+    "contact": "Contact"
   }
 }

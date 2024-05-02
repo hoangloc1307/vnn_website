@@ -1,5 +1,10 @@
 {
-  "Index": {
-    "title": "Xin chào thế giới!"
+  "NavLinks": {
+    "about-us": "Về VNN",
+    "products": "Sản Phẩm",
+    "news": "Tin Tức",
+    "csr": "CSR",
+    "jobs": "Tuyển Dụng",
+    "contact": "Liên Hệ"
   }
 }

@@ -1,5 +1,6 @@
 import '@/app/globals.css';
 import type { Metadata } from 'next';
+import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { Montserrat } from 'next/font/google';
 
 const montserrat = Montserrat({ subsets: ['vietnamese'] });
@@ -18,7 +19,11 @@ type Props = {
 export default function RootLayout({ children, params: { locale } }: Props) {
   return (
     <html lang={locale}>
-      <body className={`${montserrat.className} antialiased`}>{children}</body>
+      <body className={`${montserrat.className} antialiased lg:overflow-y-auto`}>
+        <NextIntlClientProvider messages={useMessages()} locale={locale}>
+          {children}
+        </NextIntlClientProvider>
+      </body>
     </html>
   );
 }
