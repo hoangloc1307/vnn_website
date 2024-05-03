@@ -12,17 +12,14 @@ export default function Header() {
 
   return (
     <header
-      className={clsx(
-        'fixed left-0 top-0  z-50 w-full border-b bg-gradient-to-b from-[#94D9FF] to-white transition-shadow',
-        {
-          'lg:drop-shadow-md': position !== 0,
-        },
-      )}
+      className={clsx('fixed left-0 top-0 z-50 w-full border-b bg-gradient-to-b from-[#94D9FF] to-white duration-500', {
+        'lg:shadow-md': position !== 0,
+      })}
     >
       <div className='vnn-container'>
         <div
           className={twMerge(
-            clsx('flex items-center justify-between py-1 transition-all duration-500', {
+            clsx('flex items-center justify-between py-1 duration-500', {
               'lg:py-4': position === 0,
             }),
           )}

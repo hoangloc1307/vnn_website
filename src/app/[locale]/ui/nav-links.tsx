@@ -30,7 +30,7 @@ export default function NavLinks() {
 
       <nav
         className={clsx(
-          'fixed right-0 top-0 z-20 flex h-screen w-60 flex-col gap-2 bg-white p-4 transition-all duration-500 lg:static lg:h-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:items-center lg:bg-transparent lg:p-0',
+          'fixed right-0 top-0 z-20 flex h-screen w-60 flex-col gap-2 bg-white p-4 duration-500 lg:static lg:h-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:items-center lg:bg-transparent lg:p-0',
           {
             'translate-x-full': !show,
             'translate-x-0': show,
@@ -38,7 +38,7 @@ export default function NavLinks() {
           },
         )}
       >
-        <ul className={clsx('flex flex-col transition-all lg:flex-row lg:p-0')}>
+        <ul className={clsx('flex flex-col lg:flex-row')}>
           {MENUS.map((item) => (
             <li key={item.href}>
               <NavigationLink href={item.href} onClick={() => setShow(false)}>
@@ -52,7 +52,7 @@ export default function NavLinks() {
       </nav>
 
       <div
-        className={clsx('fixed left-0 top-0 z-10 h-screen w-full bg-black bg-opacity-40 transition-opacity lg:hidden', {
+        className={clsx('fixed left-0 top-0 z-10 h-full w-full bg-black/40 duration-500 lg:hidden', {
           'pointer-events-auto opacity-100': show,
           'pointer-events-none opacity-0': !show,
         })}

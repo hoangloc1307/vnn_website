@@ -7,10 +7,10 @@ export default function WebsiteLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main>
+    <>
       <Header />
-      {children}
+      <main className='bg-[#f1f2f6] pt-14 lg:pt-20'>{children}</main>
       <Footer />
-    </main>
+    </>
   );
 }

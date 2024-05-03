@@ -1,4 +1,6 @@
-import '@/app/globals.css';
+import '@/styles/globals.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import type { Metadata } from 'next';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { Montserrat } from 'next/font/google';
@@ -18,7 +20,7 @@ type Props = {
 
 export default function RootLayout({ children, params: { locale } }: Props) {
   return (
-    <html lang={locale}>
+    <html lang={locale} className='scroll-smooth'>
       <body className={`${montserrat.className} antialiased lg:overflow-y-auto`}>
         <NextIntlClientProvider messages={useMessages()} locale={locale}>
           {children}

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+li.slick-active > span {
+  @apply bg-primary hover:bg-primary;
+}
+
 @layer base {
 }
 
