@@ -34,7 +34,7 @@ export default function NavLinks() {
           {
             'translate-x-full': !show,
             'translate-x-0': show,
-            'lg:border-b lg:border-primary lg:pb-2': position === 0,
+            'lg:border-b-2 lg:border-primary lg:pb-2': position === 0,
           },
         )}
       >

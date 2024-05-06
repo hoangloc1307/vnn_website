@@ -20,16 +20,25 @@ export default function Header() {
         <div
           className={twMerge(
             clsx('flex items-center justify-between py-1 duration-500', {
-              'lg:py-4': position === 0,
+              'lg:py-2': position === 0,
             }),
           )}
         >
           {/* Logo */}
-          <div className='flex items-center'>
+          <div className='flex'>
             <Link href='/' className='flex items-center self-stretch'>
               <Image src='/images/logo.png' alt='Logo NOK' width={100} height={31} quality={100} priority />
             </Link>
-            <Image src='/images/vietnam.png' alt='Vietnam flag' width={50} height={47} quality={100} />
+            <Image
+              src='/images/vietnam.png'
+              alt='Vietnam flag'
+              width={40}
+              height={37}
+              className={clsx('duration-500 ease-in-out', {
+                'translate-y-1': position !== 0,
+                'translate-y-2': position === 0,
+              })}
+            />
           </div>
 
           {/* Menu */}

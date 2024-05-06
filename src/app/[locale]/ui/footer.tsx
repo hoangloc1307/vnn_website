@@ -1,5 +1,7 @@
 import { MENUS } from '@/constants/menus';
 import { Link } from '@/navigation';
+import { faFacebookF, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ChevronRightIcon, EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid';
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
@@ -39,7 +41,7 @@ export default function Footer() {
               </ul>
             </div>
             {/* Quick Links */}
-            <div className='col-span-1 hidden'>
+            <div className='col-span-1 hidden lg:block'>
               <h2 className='mb-1 text-base font-semibold capitalize text-white'>Quick Links</h2>
               <ul className='space-y-1 text-sm'>
                 {MENUS.map((item, index) => (
@@ -57,7 +59,7 @@ export default function Footer() {
               </ul>
             </div>
             {/* News */}
-            <div className='col-span-1 hidden'>
+            <div className='col-span-1 hidden lg:block'>
               <h2 className='mb-1 text-base font-semibold capitalize text-white'>News</h2>
               <ul className='space-y-2 text-sm'>
                 {Array.from({ length: 5 }).map((_, index) => (
@@ -79,10 +81,11 @@ export default function Footer() {
       </div>
 
       {/* Bottom */}
-      <div className={clsx(`bg-[url('/images/img_footer.svg')] bg-cover bg-right bg-no-repeat pt-10`)}>
+      <div className={clsx(`bg-[url('/images/img_footer.svg')] bg-cover bg-right bg-no-repeat pt-[20vh]`)}>
         <div className='vnn-container'>
-          <div className='flex flex-col items-center gap-y-6 py-5 text-sm'>
-            <div>
+          <div className='flex flex-col items-center gap-y-6 py-5 text-sm sm:flex-row sm:justify-between sm:py-1'>
+            {/* Logo */}
+            <div className='space-y-2'>
               <div>
                 <Image
                   src={'/images/logo.png'}
@@ -92,19 +95,34 @@ export default function Footer() {
                   className='opacity-60 brightness-0 invert hover:opacity-100'
                 />
               </div>
-              <ul className='flex items-center'>
+              <ul className='flex items-center justify-center gap-2'>
                 <li>
-                  <Link href={'/'}>
-                    <Image width={38} height={38} src={'/images/facebook.svg'} alt='VNN Facebook' />
+                  <Link
+                    href={'/'}
+                    className='group flex size-8 items-center justify-center rounded-full hover:bg-white'
+                  >
+                    <FontAwesomeIcon size='xl' icon={faFacebookF} className='text-white/60 group-hover:text-blue-600' />
                   </Link>
                 </li>
                 <li>
-                  <Link href={'/'}>
-                    <Image width={38} height={38} src={'/images/youtube.svg'} alt='VNN Youtube' />
+                  <Link
+                    href={'/'}
+                    className='group flex size-8 items-center justify-center rounded-full hover:bg-white'
+                  >
+                    <FontAwesomeIcon size='xl' icon={faYoutube} className='text-white/60 group-hover:text-red-500' />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href={'/'}
+                    className='group flex size-8 items-center justify-center rounded-full hover:bg-white'
+                  >
+                    <FontAwesomeIcon size='xl' icon={faTwitter} className='text-white/60 group-hover:text-blue-400' />
                   </Link>
                 </li>
               </ul>
             </div>
+            {/* Copyright */}
             <div className='space-y-2 text-white/60'>
               <ul className='flex flex-wrap space-x-4'>
                 {['Terms', 'Site Map', 'Privacy and Cookie Policy'].map((item, index) => (

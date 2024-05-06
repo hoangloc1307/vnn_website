@@ -11,20 +11,20 @@ export default function NewsCarousel() {
     speed: 1000,
     cssEase: 'ease-in-out',
     autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: false,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
     swipeToSlide: true,
-    slidesToScroll: 5,
-    slidesToShow: 5,
+    slidesToScroll: 1,
+    slidesToShow: 6,
     responsive: [
-      { breakpoint: 640, settings: { slidesToShow: 3, slidesToScroll: 3 } },
-      { breakpoint: 768, settings: { slidesToShow: 4, slidesToScroll: 4 } },
-      { breakpoint: 1024, settings: { slidesToShow: 4, slidesToScroll: 4 } },
+      { breakpoint: 640, settings: { slidesToShow: 3, slidesToScroll: 1 } },
+      { breakpoint: 768, settings: { slidesToShow: 4, slidesToScroll: 1 } },
+      { breakpoint: 1024, settings: { slidesToShow: 5, slidesToScroll: 1 } },
     ],
     dots: true,
     appendDots: (dots) => (
       <>
-        <ul className='mt-2 flex items-center justify-center gap-3 py-2'>{dots}</ul>
+        <ul className='flex items-center justify-center gap-3 py-2'>{dots}</ul>
       </>
     ),
     customPaging: (_) => (
@@ -34,17 +34,17 @@ export default function NewsCarousel() {
 
   return (
     <div>
-      <h2 className='text-base font-semibold uppercase text-dark'>News/Events</h2>
+      <h2 className='mb-2 text-base font-semibold uppercase text-dark lg:text-lg xl:text-xl'>News/Events</h2>
       <Slider {...settings}>
         {Array.from({ length: 10 }).map((_, index) => (
-          <div key={index} className='p-2 2xl:p-5'>
+          <div key={index} className='px-2 py-1 lg:px-3 xl:px-4 2xl:px-10'>
             <Link href={'/'}>
-              <div className='peer rounded-xl border bg-white p-2 shadow ring-2 ring-transparent duration-500 ease-in-out hover:ring-primary'>
-                <div className='relative aspect-video w-full rounded-md md:rounded-lg lg:rounded-xl'>
-                  <Image src='/images/logo.png' alt='Logo' fill className='object-contain' quality={100} />
-                </div>
+              {/* <div className='peer rounded-xl border bg-white p-2 shadow ring-2 ring-transparent duration-500 ease-in-out hover:ring-primary'> */}
+              <div className='peer relative aspect-video w-full rounded-md bg-white shadow ring-2 ring-transparent duration-500 ease-in-out hover:ring-primary'>
+                <Image src='/images/logo.png' alt='Logo' fill className='object-contain' quality={100} />
               </div>
-              <h3 className='mt-2 text-center text-xs font-semibold uppercase text-dark duration-500 ease-in-out peer-hover:text-primary'>
+              {/* </div> */}
+              <h3 className='mt-2 text-center text-xs font-semibold uppercase text-dark duration-500 ease-in-out peer-hover:text-primary sm:text-sm'>
                 Tin tức {index + 1}
               </h3>
             </Link>

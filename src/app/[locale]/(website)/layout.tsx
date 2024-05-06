@@ -9,7 +9,7 @@ export default function WebsiteLayout({
   return (
     <>
       <Header />
-      <main className='bg-[#f1f2f6] pt-14 lg:pt-20'>{children}</main>
+      <main className='bg-[#f1f2f6] pt-14 lg:pt-[58px]'>{children}</main>
       <Footer />
     </>
   );

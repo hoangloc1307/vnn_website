@@ -2,10 +2,10 @@ import NewsCarousel from '@/app/[locale]/ui/carousel';
 
 export default function Home() {
   return (
-    <div className='flex flex-col md:h-[calc(100vh-56px)] lg:h-[calc(100vh-79px)]'>
+    <div className='flex flex-col lg:h-[calc(100vh-79px)]'>
       {/* Hero video */}
-      <section className='md:flex-grow'>
-        <div className='relative aspect-video h-full w-full md:aspect-auto'>
+      <section className='lg:flex-grow'>
+        <div className='relative aspect-video h-full w-full lg:aspect-auto'>
           <video loop muted controls autoPlay className='absolute h-full w-full object-cover'>
             <source src='/videos/hero2.mp4' type='video/mp4' />
             Your browser does not support the video tag.
