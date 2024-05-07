@@ -35,8 +35,8 @@ export default function Header() {
               width={40}
               height={37}
               className={clsx('duration-500 ease-in-out', {
-                'translate-y-1': position !== 0,
-                'translate-y-2': position === 0,
+                'lg:translate-y-1': position !== 0,
+                'lg:translate-y-2': position === 0,
               })}
             />
           </div>

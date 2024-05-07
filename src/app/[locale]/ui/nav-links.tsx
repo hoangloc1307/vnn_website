@@ -24,7 +24,7 @@ export default function NavLinks() {
 
   return (
     <div className='flex items-center'>
-      <span className='inline-block cursor-pointer p-3 lg:hidden' onClick={() => setShow(true)}>
+      <span className='inline-block cursor-pointer p-2 lg:hidden' onClick={() => setShow(true)}>
         <Bars3Icon className='size-6' />
       </span>
 

@@ -6,12 +6,14 @@ export default function AboutUsPage() {
     <div className='vnn-container flex flex-col sm:h-screen'>
       <section className='flex-grow py-5'>
         <div className='grid gap-y-4 md:grid-cols-2 md:gap-4'>
+          {/* GD Image */}
           <div className='flex flex-col gap-4'>
-            <h1 className='text-2xl font-semibold text-dark'>Thông điệp từ Tổng giám đốc: Mr. Yoshida Naofumi</h1>
-            <div className='mx-auto flex aspect-[3/4] max-w-80 items-center justify-center border border-dark'>
+            <h1 className='text-base font-semibold text-dark'>Thông điệp từ Tổng giám đốc: Mr. Yoshida Naofumi</h1>
+            <div className='mx-auto flex aspect-[4/3] max-w-xs items-center justify-center border border-dark'>
               Hình tổng giám đốc
             </div>
           </div>
+          {/* GD Message */}
           <div className='space-y-4'>
             <h2 className='bg-gradient-to-r from-[#00b0f0] to-[#dcebf8] px-2 py-1.5 text-xl font-semibold text-dark'>
               Cam kết của chúng tôi về quản lý có trách nhiệm
