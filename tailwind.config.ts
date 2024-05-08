@@ -15,6 +15,10 @@ const config: Config = {
       spacing: {
         '8xl': '90rem',
       },
+      height: {
+        'screen-without-header-m': 'calc(100vh - 48px)',
+        'screen-without-header': 'calc(100vh - 58px)',
+      },
     },
   },
   plugins: [],

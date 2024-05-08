@@ -17,9 +17,9 @@ export default function NewsCarousel() {
     slidesToScroll: 1,
     slidesToShow: 6,
     responsive: [
-      { breakpoint: 640, settings: { slidesToShow: 3, slidesToScroll: 1 } },
-      { breakpoint: 768, settings: { slidesToShow: 4, slidesToScroll: 1 } },
-      { breakpoint: 1024, settings: { slidesToShow: 5, slidesToScroll: 1 } },
+      { breakpoint: 639, settings: { slidesToShow: 3, slidesToScroll: 1 } },
+      { breakpoint: 767, settings: { slidesToShow: 4, slidesToScroll: 1 } },
+      { breakpoint: 1023, settings: { slidesToShow: 5, slidesToScroll: 1 } },
     ],
     dots: true,
     appendDots: (dots) => (
@@ -37,7 +37,7 @@ export default function NewsCarousel() {
       <h2 className='mb-2 text-base font-semibold uppercase text-dark lg:text-lg xl:text-xl'>News/Events</h2>
       <Slider {...settings}>
         {Array.from({ length: 10 }).map((_, index) => (
-          <div key={index} className='px-2 py-1 lg:px-3 xl:px-4 2xl:px-10'>
+          <div key={index} className='px-2 py-1 lg:px-3 xl:px-4 2xl:px-5'>
             <Link href={'/'}>
               {/* <div className='peer rounded-xl border bg-white p-2 shadow ring-2 ring-transparent duration-500 ease-in-out hover:ring-primary'> */}
               <div className='peer relative aspect-video w-full rounded-md bg-white shadow ring-2 ring-transparent duration-500 ease-in-out hover:ring-primary'>

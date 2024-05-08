@@ -9,7 +9,7 @@ export default function WebsiteLayout({
   return (
     <>
       <Header />
-      <main className='bg-[#f1f2f6] pt-12 lg:pt-[58px]'>{children}</main>
+      <main className='min-h-screen bg-[#f1f2f6] pt-12 lg:pt-[58px]'>{children}</main>
       <Footer />
     </>
   );
