@@ -4,7 +4,15 @@
     "products": "Our Products",
     "news": "News Release",
     "csr": "Our CSR",
-    "jobs": "Career Development",
+    "career": "Career Development",
     "contact": "Contact"
+  },
+  "Metadata": {
+    "about-us": {
+      "title": "About Us"
+    },
+    "news": {
+      "title": "News Release"
+    }
   }
 }

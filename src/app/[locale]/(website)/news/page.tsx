@@ -1,39 +1,21 @@
+import NewsCard from '@/app/ui/news/news-card';
 import { postList } from '@/fake/posts';
-import { Link } from '@/navigation';
-import { faCalendar } from '@fortawesome/free-regular-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import moment from 'moment';
-import Image from 'next/image';
+import { GenerateMetadata } from '@/types/metadata';
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata({ params: { locale } }: GenerateMetadata) {
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+  return { title: t('news.title') };
+}
 
 export default function NewsPage() {
   return (
     <div className='vnn-container py-5'>
       <h1 className='mb-5 text-lg font-semibold uppercase text-dark'>Sự kiện/Tin tức</h1>
-      <ul className='grid grid-cols-1 gap-y-10 sm:grid-cols-2 sm:gap-x-3'>
+      <ul className='grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5 md:gap-7 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
         {postList.map((post, index) => (
-          <li key={index} className='overflow-hidden rounded-xl border bg-white shadow'>
-            <Link href={'/news'}>
-              {/* Image */}
-              <div className='relative aspect-video w-full'>
-                <Image src={`/images/${post.image}`} alt={post.title} fill className='object-cover' />
-              </div>
-              {/* Content */}
-              <div className='px-4 py-2'>
-                {/* Publish date */}
-                <span className='text-xs text-gray-500 sm:text-sm'>
-                  <FontAwesomeIcon icon={faCalendar} className='mr-2' />
-                  {moment(post.createdDate, 'YYYYMMDD').format('DD-MM-YYYY')}
-                </span>
-                {/* Title */}
-                <h2 className='line-clamp-2 py-2 font-semibold uppercase text-dark'>{post.title}</h2>
-                {/* Description */}
-                <p className='text line-clamp-6 text-dark'>{post.description}</p>
-                {/* Read more */}
-                {/* <Link href={'/news'} className='mt-2 inline-block w-full text-center text-primary'>
-                  Xem thêm
-                </Link> */}
-              </div>
-            </Link>
+          <li key={index}>
+            <NewsCard news={post} />
           </li>
         ))}
       </ul>

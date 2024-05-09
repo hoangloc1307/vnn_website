@@ -1,8 +1,8 @@
 import { MENUS } from '@/constants/menus';
 import { Link } from '@/navigation';
 import { faFacebookF, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faAngleRight, faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ChevronRightIcon, EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid';
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -19,24 +19,18 @@ export default function Footer() {
             {/* Address */}
             <div className='col-span-1 md:col-span-2'>
               <h2 className='mb-1 text-base font-semibold capitalize text-white'>Address</h2>
-              <ul className='space-y-1 text-sm'>
-                <li className='flex items-center gap-2.5 text-white/60'>
-                  <span>
-                    <MapPinIcon className='size-4' />
-                  </span>
-                  <span>Plot 208 Amata IP, Bien Hoa City, Dong Nai Province, Vietnam</span>
+              <ul className='space-y-1 text-sm text-white/60'>
+                <li>
+                  <FontAwesomeIcon icon={faLocationDot} size='lg' className='mr-2' /> Plot 208 Amata IP, Bien Hoa City,
+                  Dong Nai Province, Vietnam
                 </li>
-                <li className='flex items-center gap-2.5 text-white/60'>
-                  <span>
-                    <PhoneIcon className='size-4' />
-                  </span>
-                  <span>+84-251 3936311</span>
+                <li>
+                  <FontAwesomeIcon icon={faPhone} size='lg' className='mr-2' />
+                  +84-251 3936311
                 </li>
-                <li className='flex items-center gap-2.5 text-white/60'>
-                  <span>
-                    <EnvelopeIcon className='size-4' />
-                  </span>
-                  <span>system@nok.com.vn</span>
+                <li>
+                  <FontAwesomeIcon icon={faEnvelope} size='lg' className='mr-2' />
+                  system@nok.com.vn
                 </li>
               </ul>
             </div>
@@ -47,7 +41,7 @@ export default function Footer() {
                 {MENUS.map((item, index) => (
                   <li key={index} className='flex items-center gap-2.5 text-white/60'>
                     <span>
-                      <ChevronRightIcon className='size-4' />
+                      <FontAwesomeIcon icon={faAngleRight} size='sm' />
                     </span>
                     <span className='flex-grow'>
                       <Link href={item.href} className='block transition-all hover:text-white hover:underline'>
@@ -65,7 +59,7 @@ export default function Footer() {
                 {Array.from({ length: 5 }).map((_, index) => (
                   <li key={index} className='flex items-center gap-2.5 text-white/60'>
                     <span>
-                      <ChevronRightIcon className='size-4' />
+                      <FontAwesomeIcon icon={faAngleRight} size='sm' />
                     </span>
                     <span className='flex-grow'>
                       <Link href={'/'} className='block transition-all hover:text-white hover:underline'>
@@ -81,7 +75,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom */}
-      <div className={clsx(`bg-[url('/images/img_footer.svg')] bg-cover bg-right bg-no-repeat pt-[20vh]`)}>
+      <div className={clsx(`bg-[url('/images/img_footer.svg')] bg-cover bg-right bg-no-repeat pt-[20dvh]`)}>
         <div className='vnn-container'>
           <div className='flex flex-col items-center gap-y-6 py-5 text-sm sm:flex-row sm:justify-between sm:py-1'>
             {/* Logo */}

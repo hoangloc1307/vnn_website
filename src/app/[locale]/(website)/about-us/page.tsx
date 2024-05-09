@@ -1,21 +1,33 @@
-import NewsCarousel from '@/app/[locale]/ui/carousel';
+import NewsCarousel from '@/app/ui/carousel';
+import { GenerateMetadata } from '@/types/metadata';
 import { faHandshake } from '@fortawesome/free-regular-svg-icons';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
+
+export async function generateMetadata({ params: { locale } }: GenerateMetadata) {
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+  return { title: t('about-us.title') };
+}
 
 export default function AboutUsPage() {
   return (
     <div className='vnn-container flex flex-col gap-5 py-5'>
+      {/* lg:landscape:h-screen-without-header */}
       {/* Content */}
-      <div className='flex flex-col gap-3 lg:flex-row lg:gap-7'>
+      <div className='flex flex-col gap-3 lg:flex-row lg:gap-7 '>
+        {/* lg:landscape:flex-grow */}
         {/* GD Image */}
-        <div className='flex-1 space-y-3'>
-          <h1 className='text-base font-semibold uppercase text-dark lg:text-lg xl:text-xl'>
-            Thông điệp từ Tổng giám đốc: Mr. Yoshida Naofumi
-          </h1>
-          <div className='lg: relative mx-auto aspect-[4/3] w-full max-w-sm sm:max-w-lg'>
-            <Image src={'/images/company.jpg'} alt='company' fill className='object-cover' />
+        <div className='flex flex-1 flex-col gap-3'>
+          <div className='basis-1'>
+            <h1 className='text-base font-semibold uppercase text-dark lg:text-lg xl:text-xl'>
+              Thông điệp từ Tổng giám đốc: Mr. Yoshida Naofumi
+            </h1>
+          </div>
+          <div className='flex-grow'>
+            <div className='relative mx-auto aspect-[4/3] w-full max-w-sm md:max-w-xl'>
+              <Image src={'/images/company.jpg'} alt='company' fill className='object-cover' />
+            </div>
           </div>
         </div>
 
@@ -24,7 +36,7 @@ export default function AboutUsPage() {
           <h2 className='rounded bg-gradient-to-r from-[#94D9FF] to-[#dcebf8] p-2 text-sm font-semibold uppercase text-dark lg:text-base xl:text-lg'>
             <FontAwesomeIcon icon={faHandshake} size='lg' /> Cam kết của chúng tôi về quản lý có trách nhiệm
           </h2>
-          <ul className='list-inside list-disc space-y-2 text-justify text-sm font-medium text-dark md:flex md:gap-5 md:space-y-0 lg:flex-col lg:text-base xl:text-lg'>
+          <ul className='list-inside list-disc space-y-2 text-justify text-sm font-medium text-dark md:flex md:gap-5 md:space-y-0 lg:flex-col xl:landscape:text-base 2xl:landscape:text-lg 2xl:landscape:leading-8'>
             <li>
               Trách nhiệm luôn là giá trị định hướng mạnh mẽ tại Vietnam NOK, với việc quản lý có trách nhiệm là một
               phần nội tại trong chiến lược tạo ra giá trị và lợi nhuận lâu dài của công ty. Chúng tôi hiểu rằng với tư
@@ -43,7 +55,7 @@ export default function AboutUsPage() {
       </div>
 
       {/* Carousel */}
-      <div>
+      <div className='basis-1'>
         <NewsCarousel />
       </div>
     </div>

@@ -4,7 +4,15 @@
     "products": "Sản Phẩm",
     "news": "Tin Tức",
     "csr": "CSR",
-    "jobs": "Tuyển Dụng",
+    "career": "Nghề Nghiệp",
     "contact": "Liên Hệ"
+  },
+  "Metadata": {
+    "about-us": {
+      "title": "Về VNN"
+    },
+    "news": {
+      "title": "Tin Tức"
+    }
   }
 }

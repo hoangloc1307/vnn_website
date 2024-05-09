@@ -1,6 +1,6 @@
 'use client';
 
-import NavLinks from '@/app/[locale]/ui/nav-links';
+import NavLinks from '@/app/ui/nav-links';
 import useScrollPosition from '@/hooks/useScrollPosition';
 import { Link } from '@/navigation';
 import clsx from 'clsx';

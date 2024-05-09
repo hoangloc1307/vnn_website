@@ -16,8 +16,8 @@ const config: Config = {
         '8xl': '90rem',
       },
       height: {
-        'screen-without-header-m': 'calc(100vh - 48px)',
-        'screen-without-header': 'calc(100vh - 58px)',
+        'screen-without-header-m': 'calc(100dvh - 48px)',
+        'screen-without-header': 'calc(100dvh - 58px)',
       },
     },
   },

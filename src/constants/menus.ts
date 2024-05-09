@@ -3,6 +3,6 @@ export const MENUS = [
   { href: '/products', title: 'products' },
   { href: '/news', title: 'news' },
   { href: '/csr', title: 'csr' },
-  { href: '/jobs', title: 'jobs' },
+  { href: '/career', title: 'career' },
   { href: '/contact', title: 'contact' },
 ] as const;

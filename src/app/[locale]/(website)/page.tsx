@@ -1,8 +1,8 @@
-import NewsCarousel from '@/app/[locale]/ui/carousel';
+import NewsCarousel from '@/app/ui/carousel';
 
 export default function Home() {
   return (
-    <div className='flex flex-col lg:h-[calc(100vh-79px)]'>
+    <div className='flex flex-col lg:h-screen-without-header'>
       {/* Hero video */}
       <section className='lg:flex-grow'>
         <div className='relative aspect-video h-full w-full lg:aspect-auto'>
@@ -14,8 +14,10 @@ export default function Home() {
       </section>
 
       {/* News/Events Carousel */}
-      <section className='vnn-container basis-1 py-2'>
-        <NewsCarousel />
+      <section className='basis-1 py-2'>
+        <div className='vnn-container'>
+          <NewsCarousel />
+        </div>
       </section>
     </div>
   );

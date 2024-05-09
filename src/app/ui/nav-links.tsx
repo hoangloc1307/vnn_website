@@ -1,10 +1,11 @@
 'use client';
 
-import LanguageSwitcher from '@/app/[locale]/ui/language-switchert';
-import NavigationLink from '@/app/[locale]/ui/navigation-link';
+import LanguageSwitcher from '@/app/ui/language-switchert';
+import NavigationLink from '@/app/ui/navigation-link';
 import { MENUS } from '@/constants/menus';
 import useScrollPosition from '@/hooks/useScrollPosition';
-import { Bars3Icon } from '@heroicons/react/24/solid';
+import { faBarsStaggered } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
@@ -25,7 +26,7 @@ export default function NavLinks() {
   return (
     <div className='flex items-center'>
       <span className='inline-block cursor-pointer p-2 lg:hidden' onClick={() => setShow(true)}>
-        <Bars3Icon className='size-6' />
+        <FontAwesomeIcon icon={faBarsStaggered} size='lg' />
       </span>
 
       <nav
