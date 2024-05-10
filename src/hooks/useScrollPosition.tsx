@@ -1,5 +1,5 @@
-import { isBrowser } from '@/utils/utils';
 import { useEffect, useState } from 'react';
+import { isBrowser } from '~/utils/utils';
 
 const useScrollPosition = () => {
   const [scrollPos, setScrollPos] = useState(0);

@@ -1,5 +1,5 @@
-import { defaultLocale, locales, localePrefix } from '@/constants/locales';
 import createMiddleware from 'next-intl/middleware';
+import { defaultLocale, localePrefix, locales } from '~/constants/locales';
 
 export default createMiddleware({ locales, defaultLocale, localePrefix });
 

@@ -1,4 +1,4 @@
-import NewsCarousel from '@/app/ui/carousel';
+import NewsCarousel from '~/app/ui/carousel';
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
 
       {/* News/Events Carousel */}
       <section className='basis-1 py-2'>
-        <div className='vnn-container'>
+        <div className='container'>
           <NewsCarousel />
         </div>
       </section>

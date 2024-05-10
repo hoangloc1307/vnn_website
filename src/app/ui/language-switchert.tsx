@@ -1,8 +1,8 @@
 'use client';
 
-import { locales } from '@/constants/locales';
-import { Link, usePathname } from '@/navigation';
 import Image from 'next/image';
+import { locales } from '~/constants/locales';
+import { Link, usePathname } from '~/navigation';
 
 export default function LanguageSwitcher() {
   const pathname = usePathname();

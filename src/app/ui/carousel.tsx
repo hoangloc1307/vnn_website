@@ -1,8 +1,8 @@
 'use client';
 
-import { Link } from '@/navigation';
 import Image from 'next/image';
 import Slider, { Settings } from 'react-slick';
+import { Link } from '~/navigation';
 
 export default function NewsCarousel() {
   const settings: Settings = {

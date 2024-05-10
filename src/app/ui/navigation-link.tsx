@@ -1,9 +1,9 @@
 'use client';
 
-import { Link } from '@/navigation';
 import clsx from 'clsx';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import { ComponentProps } from 'react';
+import { Link } from '~/navigation';
 
 export default function NavigationLink({ href, ...rest }: ComponentProps<typeof Link>) {
   const selectedLayoutSegment = useSelectedLayoutSegment();
