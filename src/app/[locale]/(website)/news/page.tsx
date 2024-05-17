@@ -13,8 +13,9 @@ export default function NewsPage({ params: { locale } }: { params: { locale: str
 
   return (
     <div className='container py-5'>
-      <h1 className='mb-5 text-lg font-semibold uppercase text-dark'>Sự kiện/Tin tức</h1>
-      <ul className='grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5 md:gap-7 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
+      <h1 className='mb-5 text-base font-semibold uppercase text-dark'>Sự kiện/Tin tức</h1>
+      {/* sm:grid-cols-2 sm:gap-5 */}
+      <ul className='grid grid-cols-1 gap-3 md:gap-7 lg:grid-cols-2 xl:grid-cols-3'>
         {postList.map((post, index) => (
           <li key={index}>
             <NewsCard news={post} />

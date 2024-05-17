@@ -21,7 +21,10 @@ export default function NewsCard({ news }: News) {
     >
       {/* Image */}
       <div className='relative aspect-video w-full'>
-        <Image src={`/images/${news.image}`} alt={news.title} fill className='object-cover' />
+        {/* <Image src={`/images/${news.image}`} alt={news.title} fill className='object-cover' /> */}
+        <div className='flex h-full w-full items-center justify-center bg-blue-300 text-xl font-semibold text-dark'>
+          16:9
+        </div>
       </div>
       {/* Content */}
       <div className='px-4 py-2'>

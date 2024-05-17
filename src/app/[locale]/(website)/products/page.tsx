@@ -32,17 +32,21 @@ export default async function ProductsPage({ params: { locale } }: { params: { l
           </div>
 
           <div className='grid grid-cols-2 gap-3 lg:w-1/2'>
-            <div className='relative aspect-video w-full overflow-hidden rounded-xl'>
-              <Image src='/images/product_1.png' alt='VNN Product' fill quality={100} className='object-contain' />
+            <div className='relative aspect-video w-full self-end overflow-hidden rounded-xl bg-blue-300'>
+              {/* <Image src='/images/product_1.png' alt='VNN Product' fill quality={100} className='object-contain' /> */}
+              <div className='flex h-full w-full items-center justify-center text-xl font-semibold text-dark'>16:9</div>
             </div>
-            <div className='relative aspect-video w-full overflow-hidden rounded-xl'>
-              <Image src='/images/product_2.png' alt='VNN Product' fill quality={100} className='object-contain' />
+            <div className='relative aspect-video w-full self-end overflow-hidden rounded-xl bg-blue-300'>
+              {/* <Image src='/images/product_2.png' alt='VNN Product' fill quality={100} className='object-contain' /> */}
+              <div className='flex h-full w-full items-center justify-center text-xl font-semibold text-dark'>16:9</div>
             </div>
-            <div className='relative aspect-video w-full overflow-hidden rounded-xl'>
-              <Image src='/images/product_3.png' alt='VNN Product' fill quality={100} className='object-contain' />
+            <div className='relative aspect-video w-full overflow-hidden rounded-xl bg-blue-300'>
+              {/* <Image src='/images/product_3.png' alt='VNN Product' fill quality={100} className='object-contain' /> */}
+              <div className='flex h-full w-full items-center justify-center text-xl font-semibold text-dark'>16:9</div>
             </div>
-            <div className='relative aspect-video w-full overflow-hidden rounded-xl'>
-              <Image src='/images/product_4.png' alt='VNN Product' fill quality={100} className='object-contain' />
+            <div className='relative aspect-video w-full overflow-hidden rounded-xl bg-blue-300'>
+              {/* <Image src='/images/product_4.png' alt='VNN Product' fill quality={100} className='object-contain' /> */}
+              <div className='flex h-full w-full items-center justify-center text-xl font-semibold text-dark'>16:9</div>
             </div>
           </div>
         </div>

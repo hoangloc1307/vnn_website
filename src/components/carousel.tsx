@@ -44,8 +44,11 @@ export default function NewsCarousel({ list }: Props) {
         {list.map((item, index) => (
           <div key={index} className='px-2 py-1 lg:px-3 xl:px-4 2xl:px-5'>
             <Link href={'/'}>
-              <div className='peer relative aspect-video w-full rounded-md bg-white shadow ring-2 ring-transparent duration-500 ease-in-out hover:ring-primary'>
-                <Image src='/images/logo.png' alt='Logo' fill className='object-contain' quality={100} />
+              <div className='peer relative aspect-video w-full overflow-hidden rounded-md bg-white shadow ring-2 ring-transparent duration-500 ease-in-out hover:ring-primary'>
+                {/* <Image src='/images/16_9.png' alt='Logo' fill className='object-contain' quality={100} /> */}
+                <div className='flex h-full w-full items-center justify-center bg-blue-300 text-xl font-semibold text-dark'>
+                  16:9
+                </div>
               </div>
               <h3 className='mt-2 text-center text-xs font-semibold uppercase text-dark duration-500 ease-in-out peer-hover:text-primary sm:text-sm'>
                 {item.title}

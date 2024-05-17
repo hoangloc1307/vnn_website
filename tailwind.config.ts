@@ -13,9 +13,6 @@ const config: Config = {
         dark: '#2c3e50',
         footer: '#062754',
       },
-      spacing: {
-        '8xl': '90rem',
-      },
       height: {
         'screen-without-header-m': 'calc(100dvh - 48px)',
         'screen-without-header': 'calc(100dvh - 58px)',

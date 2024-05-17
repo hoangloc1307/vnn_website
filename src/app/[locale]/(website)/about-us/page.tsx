@@ -29,7 +29,7 @@ export default async function AboutUsPage({ params: { locale } }: { params: { lo
           {/* GD Image */}
           <div
             className={clsx(
-              'relative mx-auto aspect-[3/4] w-full max-w-[250px] overflow-hidden rounded-xl border border-primary p-1 shadow-xl',
+              'relative mx-auto aspect-[3/4] w-full max-w-[250px] overflow-hidden rounded-xl shadow-xl',
               'sm:max-w-xs',
               'md:w-1/3 md:max-w-none',
               'lg:max-w-lg',
@@ -37,7 +37,10 @@ export default async function AboutUsPage({ params: { locale } }: { params: { lo
               '2xl:max-w-[350px]',
             )}
           >
-            <Image src={'/images/company.jpg'} alt='company' fill className='object-cover' />
+            {/* <Image src={'/images/company.jpg'} alt='company' fill className='object-cover' /> */}
+            <div className='flex h-full w-full items-center justify-center bg-blue-300 text-xl font-semibold text-dark'>
+              3:4
+            </div>
           </div>
 
           {/* GD Message */}

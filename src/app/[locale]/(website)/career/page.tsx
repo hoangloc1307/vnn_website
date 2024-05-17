@@ -3,5 +3,10 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 export default function CareerPage({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale);
 
-  return <h1>Career Page</h1>;
+  return (
+    <div className='container py-5'>
+      <h1 className='mb-5 text-base font-semibold uppercase text-dark'>Career</h1>
+      <div className='h-screen-without-header-m'></div>
+    </div>
+  );
 }
