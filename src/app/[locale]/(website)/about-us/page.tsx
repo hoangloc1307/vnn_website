@@ -1,9 +1,10 @@
 import { faHandshake } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
-import NewsCarousel from '~/app/ui/carousel';
+import { fetchHomeCarousel } from '~/apis/carousel';
+import NewsCarousel from '~/components/carousel';
 import { GenerateMetadata } from '~/types/metadata';
 
 export async function generateMetadata({ params: { locale } }: GenerateMetadata) {
@@ -11,7 +12,10 @@ export async function generateMetadata({ params: { locale } }: GenerateMetadata)
   return { title: t('about-us.title') };
 }
 
-export default function AboutUsPage() {
+export default async function AboutUsPage({ params: { locale } }: { params: { locale: string } }) {
+  unstable_setRequestLocale(locale);
+  const newsList = await fetchHomeCarousel();
+
   return (
     <div className='container flex flex-col gap-5 py-5'>
       {/* Content */}
@@ -63,7 +67,7 @@ export default function AboutUsPage() {
 
       {/* Carousel */}
       <div className='basis-1'>
-        <NewsCarousel />
+        <NewsCarousel list={newsList} />
       </div>
     </div>
   );

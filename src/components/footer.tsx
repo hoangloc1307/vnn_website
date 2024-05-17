@@ -1,7 +1,6 @@
 import { faFacebookF, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faAngleRight, faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { MENUS } from '~/constants/menus';

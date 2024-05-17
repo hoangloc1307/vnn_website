@@ -1,6 +1,10 @@
-import NewsCarousel from '~/app/ui/carousel';
+import { unstable_setRequestLocale } from 'next-intl/server';
+import { Suspense } from 'react';
+import NewsCarouselWrapper from '~/components/carousel-wrapper';
 
-export default function Home() {
+export default function Home({ params: { locale } }: { params: { locale: string } }) {
+  unstable_setRequestLocale(locale);
+
   return (
     <div className='flex flex-col lg:h-screen-without-header'>
       {/* Hero video */}
@@ -16,7 +20,9 @@ export default function Home() {
       {/* News/Events Carousel */}
       <section className='basis-1 py-2'>
         <div className='container'>
-          <NewsCarousel />
+          <Suspense fallback={<div>Loading...</div>}>
+            <NewsCarouselWrapper />
+          </Suspense>
         </div>
       </section>
     </div>

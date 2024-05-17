@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
-import Footer from '~/app/ui/footer';
-import Header from '~/app/ui/header';
+import Footer from '~/components/footer';
+import Header from '~/components/header';
 
 export const metadata: Metadata = {
   title: {

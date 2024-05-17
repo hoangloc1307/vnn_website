@@ -3,8 +3,13 @@
 import Image from 'next/image';
 import Slider, { Settings } from 'react-slick';
 import { Link } from '~/navigation';
+import { CarouselItem } from '~/types/carousel';
 
-export default function NewsCarousel() {
+type Props = {
+  list: CarouselItem[];
+};
+
+export default function NewsCarousel({ list }: Props) {
   const settings: Settings = {
     infinite: true,
     arrows: false,
@@ -34,18 +39,16 @@ export default function NewsCarousel() {
 
   return (
     <div>
-      <h2 className='mb-2 text-base font-semibold uppercase text-dark lg:text-lg xl:text-xl'>News/Events</h2>
+      <h2 className='mb-2 text-base font-semibold uppercase text-dark'>News/Events</h2>
       <Slider {...settings}>
-        {Array.from({ length: 10 }).map((_, index) => (
+        {list.map((item, index) => (
           <div key={index} className='px-2 py-1 lg:px-3 xl:px-4 2xl:px-5'>
             <Link href={'/'}>
-              {/* <div className='peer rounded-xl border bg-white p-2 shadow ring-2 ring-transparent duration-500 ease-in-out hover:ring-primary'> */}
               <div className='peer relative aspect-video w-full rounded-md bg-white shadow ring-2 ring-transparent duration-500 ease-in-out hover:ring-primary'>
                 <Image src='/images/logo.png' alt='Logo' fill className='object-contain' quality={100} />
               </div>
-              {/* </div> */}
               <h3 className='mt-2 text-center text-xs font-semibold uppercase text-dark duration-500 ease-in-out peer-hover:text-primary sm:text-sm'>
-                Tin tức {index + 1}
+                {item.title}
               </h3>
             </Link>
           </div>

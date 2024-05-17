@@ -1,6 +1,8 @@
 import clsx from 'clsx';
 import moment from 'moment';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { history } from '~/fake/history';
+import { GenerateMetadata } from '~/types/metadata';
 
 const colors = [
   'from-[#ff87e8] to-[#ffdbf6]',
@@ -13,7 +15,14 @@ const colors = [
   'from-[#ffea91] to-[#fff9e1]',
 ];
 
-export default function CompanyHistory() {
+export async function generateMetadata({ params: { locale } }: GenerateMetadata) {
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+  return { title: t('company-history.title') };
+}
+
+export default function CompanyHistory({ params: { locale } }: { params: { locale: string } }) {
+  unstable_setRequestLocale(locale);
+
   return (
     <div className='container py-5'>
       <h1 className='mb-5 text-lg font-semibold uppercase text-dark'>Lịch sử hình thành</h1>

@@ -13,6 +13,9 @@
     },
     "news": {
       "title": "News Release"
+    },
+    "company-history": {
+      "title": "VNN History"
     }
   }
 }

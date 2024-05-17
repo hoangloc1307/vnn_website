@@ -1,4 +1,5 @@
 'use client';
+
 import { Variants, motion } from 'framer-motion';
 
 const variants: Variants = {

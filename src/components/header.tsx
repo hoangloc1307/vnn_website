@@ -2,7 +2,7 @@
 
 import clsx from 'clsx';
 import Image from 'next/image';
-import NavLinks from '~/app/ui/navigation';
+import NavLinks from '~/components/navigation';
 import useScrollPosition from '~/hooks/useScrollPosition';
 import { Link } from '~/navigation';
 

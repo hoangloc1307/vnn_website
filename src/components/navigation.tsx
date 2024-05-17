@@ -1,12 +1,12 @@
 'use client';
 
-import { faBarsStaggered } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
-import LanguageSwitcher from '~/app/ui/language-switchert';
-import NavigationLink from '~/app/ui/navigation-link';
+import LanguageSwitcher from '~/components/language-switchert';
+import NavigationLink from '~/components/navigation-link';
 import { MENUS } from '~/constants/menus';
 import useScrollPosition from '~/hooks/useScrollPosition';
 
@@ -27,7 +27,7 @@ export default function NavLinks() {
     <div className='flex items-center'>
       {/* Mobile menu icon */}
       <span className='inline-block size-9 cursor-pointer p-2 lg:hidden' onClick={() => setShow(true)}>
-        <FontAwesomeIcon icon={faBarsStaggered} size='lg' />
+        <FontAwesomeIcon icon={faBars} size='lg' />
       </span>
 
       {/* Navigation */}
