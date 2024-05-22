@@ -1,28 +1,26 @@
-import { revalidateTag } from 'next/cache';
-import { cookies } from 'next/headers';
+import { NextRequest } from 'next/server';
 import CONFIGS from '~/constants/config';
-import { defaultLocale } from '~/constants/locales';
 
-export async function GET() {
-  const locale = cookies().get('NEXT_LOCALE')?.value || defaultLocale;
-  const res = await fetch(`${CONFIGS.BACKEND_URL}/posts?lang=${locale}`, {
-    next: {
-      tags: ['posts'],
-    },
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const locale = searchParams.get('locale');
+  const url = CONFIGS.BACKEND_URL + '/posts?lang=' + locale;
+  const res = await fetch(url, {
+    cache: 'no-store',
   });
   const data = await res.json();
-  console.log('fetch posts on backend from route handler - START');
+  console.log('START ROUTE HANDLER');
   await new Promise((resolve) => {
     setTimeout(() => {
       resolve(1);
-    }, 5000);
+    }, 500);
   });
-  console.log('fetch posts on backend from route handler - END');
+  console.log('END ROUTE HANDLER');
   return Response.json(data);
 }
 
 // Function to revalidateTag
-export function POST() {
-  revalidateTag('posts');
-  return Response.json(`revalidateTag['posts'] OK`);
-}
+// export function POST() {
+//   revalidateTag('posts');
+//   return Response.json(`revalidateTag['posts'] OK`);
+// }
