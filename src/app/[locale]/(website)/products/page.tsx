@@ -1,11 +1,10 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
-import Image from 'next/image';
-import { fetchHomeCarousel } from '~/apis/carousel';
-import NewsCarousel from '~/components/carousel';
+import { getCarousel } from '~/apis/carousel';
+import NewsCarousel from '~/components/carousel/carousel';
 
 export default async function ProductsPage({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale);
-  const productList = await fetchHomeCarousel();
+  const productList = await getCarousel();
 
   return (
     <div className='container space-y-5 py-5'>
@@ -54,6 +53,7 @@ export default async function ProductsPage({ params: { locale } }: { params: { l
 
       {/* Carousel */}
       <div>
+        <h2 className='mb-2 text-base font-semibold uppercase text-dark'>News/Events</h2>
         <NewsCarousel list={productList} />
       </div>
     </div>

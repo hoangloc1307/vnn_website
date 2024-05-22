@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { MENUS } from '~/constants/menus';
-import { postList } from '~/fake/posts';
+// import { postList } from '~/fake/posts';
 import { Link } from '~/navigation';
 
 export default function Footer() {
@@ -56,7 +56,7 @@ export default function Footer() {
           <div className='hidden space-y-2 lg:block'>
             <h2 className='text-base font-semibold capitalize text-white'>News</h2>
             <ul className='space-y-3 text-sm'>
-              {postList.slice(0, 5).map((post, index) => (
+              {/* {[].slice(0, 5).map((post, index) => (
                 <li key={index} className='flex items-center gap-2.5 text-white/60'>
                   <Link
                     href={'/'}
@@ -66,7 +66,7 @@ export default function Footer() {
                     <FontAwesomeIcon icon={faAngleRight} size='sm' className='mr-2' /> {post.title}
                   </Link>
                 </li>
-              ))}
+              ))} */}
             </ul>
           </div>
         </div>

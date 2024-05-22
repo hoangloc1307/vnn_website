@@ -1,6 +1,7 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { Suspense } from 'react';
-import NewsCarouselWrapper from '~/components/carousel-wrapper';
+import CarouselSkeleton from '~/components/carousel/skeleton';
+import NewsCarouselWrapper from '~/components/carousel/wrapper';
 
 export default function Home({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale);
@@ -20,8 +21,9 @@ export default function Home({ params: { locale } }: { params: { locale: string 
       {/* News/Events Carousel */}
       <section className='basis-1 py-2'>
         <div className='container'>
-          <Suspense fallback={<div>Loading...</div>}>
-            <NewsCarouselWrapper />
+          <h2 className='mb-2 text-base font-semibold uppercase text-dark'>News/Events</h2>
+          <Suspense fallback={<CarouselSkeleton />}>
+            <NewsCarouselWrapper category='' />
           </Suspense>
         </div>
       </section>
