@@ -4,7 +4,7 @@ import NewsCarousel from '~/components/carousel/carousel';
 
 export default async function ProductsPage({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale);
-  const productList = await getCarousel();
+  const productList = await getCarousel('product');
 
   return (
     <div className='container space-y-5 py-5'>
@@ -54,7 +54,7 @@ export default async function ProductsPage({ params: { locale } }: { params: { l
       {/* Carousel */}
       <div>
         <h2 className='mb-2 text-base font-semibold uppercase text-dark'>News/Events</h2>
-        <NewsCarousel list={productList} />
+        <NewsCarousel list={productList} locale={locale} />
       </div>
     </div>
   );

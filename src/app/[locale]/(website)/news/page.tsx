@@ -15,7 +15,7 @@ export default function NewsPage({ params: { locale } }: { params: { locale: str
     <div className='container py-5'>
       <h1 className='mb-5 text-base font-semibold uppercase text-dark'>Sự kiện/Tin tức</h1>
       <Suspense fallback={<div>Loading...</div>}>
-        <NewsList />
+        <NewsList locale={locale} />
       </Suspense>
     </div>
   );

@@ -13,7 +13,7 @@ export async function generateMetadata({ params: { locale } }: GenerateMetadata)
 
 export default async function AboutUsPage({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale);
-  const newsList = await getCarousel();
+  const newsList = await getCarousel('about');
 
   return (
     <div className='container flex flex-col gap-5 py-5'>
@@ -69,7 +69,7 @@ export default async function AboutUsPage({ params: { locale } }: { params: { lo
 
       {/* Carousel */}
       <div className='basis-1'>
-        <NewsCarousel list={newsList} />
+        <NewsCarousel list={newsList} locale={locale} />
       </div>
     </div>
   );

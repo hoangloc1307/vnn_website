@@ -1,17 +1,27 @@
-import { cookies } from 'next/headers';
 import CONFIGS from '~/constants/config';
 import { CarouselItem } from '~/types/carousel';
 
-export async function getCarousel(): Promise<CarouselItem[]> {
-  const locale = cookies().get('NEXT_LOCALE')?.value;
+export async function getCarousel(category: string): Promise<CarouselItem[]> {
+  console.log('START FETCH CAROUSEL', category);
 
-  const result = await fetch(`${CONFIGS.BASE_URL}/api/carousel?locale=${locale}`, {
+  const fetchUrl = CONFIGS.BACKEND_URL + '/carousel?category=' + category;
+  const result = await fetch(fetchUrl, {
     next: {
-      revalidate: 60,
+      tags: [`carousel-${category}`],
     },
   });
+
   if (!result.ok) {
     throw new Error('Failed to fetch data');
   }
+
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(1);
+    }, 3000);
+  });
+
+  console.log('END FETCH CAROUSEL', category);
+
   return result.json();
 }

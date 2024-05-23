@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import CarouselSkeleton from '~/components/carousel/skeleton';
 import NewsCarouselWrapper from '~/components/carousel/wrapper';
 
-export default function Home({ params: { locale } }: { params: { locale: string } }) {
+export default async function Home({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale);
 
   return (
@@ -23,7 +23,7 @@ export default function Home({ params: { locale } }: { params: { locale: string 
         <div className='container'>
           <h2 className='mb-2 text-base font-semibold uppercase text-dark'>News/Events</h2>
           <Suspense fallback={<CarouselSkeleton />}>
-            <NewsCarouselWrapper category='' />
+            <NewsCarouselWrapper category='home' locale={locale} />
           </Suspense>
         </div>
       </section>

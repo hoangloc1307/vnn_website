@@ -7,9 +7,10 @@ import { CarouselItem } from '~/types/carousel';
 
 type Props = {
   list: CarouselItem[];
+  locale: string;
 };
 
-export default function NewsCarousel({ list }: Props) {
+export default function NewsCarousel({ list, locale }: Props) {
   const settings: Settings = {
     infinite: true,
     arrows: false,
@@ -49,7 +50,7 @@ export default function NewsCarousel({ list }: Props) {
               </div>
             </div>
             <h3 className='mt-2 text-center text-xs font-semibold uppercase text-dark duration-500 ease-in-out peer-hover:text-primary sm:text-sm'>
-              {item.title}
+              {item[`title_${locale}` as keyof CarouselItem]}
             </h3>
           </Link>
         </div>

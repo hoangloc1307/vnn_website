@@ -1,3 +1,4 @@
 export type CarouselItem = {
-  title: string;
+  title_vi: string;
+  title_en: string;
 };
