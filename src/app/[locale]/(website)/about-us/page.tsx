@@ -5,10 +5,11 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { getCarousel } from '~/apis/carousel';
 import NewsCarousel from '~/components/carousel/carousel';
 import { GenerateMetadata } from '~/types/metadata';
+import genPageMetadata from '~/utils/seo';
 
 export async function generateMetadata({ params: { locale } }: GenerateMetadata) {
   const t = await getTranslations({ locale, namespace: 'Metadata' });
-  return { title: t('about-us.title') };
+  return genPageMetadata({ title: t('about-us.title'), locale });
 }
 
 export default async function AboutUsPage({ params: { locale } }: { params: { locale: string } }) {

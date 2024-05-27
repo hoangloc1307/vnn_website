@@ -8,14 +8,25 @@
     "contact": "Contact"
   },
   "Metadata": {
+    "home": {
+      "title": "Home"
+    },
     "about-us": {
-      "title": "About Us"
+      "title": "About VNN"
     },
     "news": {
-      "title": "News Release"
+      "title": "News release"
     },
     "company-history": {
-      "title": "VNN History"
+      "title": "VNN history"
+    },
+    "products": {
+      "title": "Products"
     }
+  },
+  "Footer": {
+    "address": "Address",
+    "quick-links": "Quick links",
+    "news": "News"
   }
 }

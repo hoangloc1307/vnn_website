@@ -1,6 +1,13 @@
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { getCarousel } from '~/apis/carousel';
 import NewsCarousel from '~/components/carousel/carousel';
+import { GenerateMetadata } from '~/types/metadata';
+import genPageMetadata from '~/utils/seo';
+
+export async function generateMetadata({ params: { locale } }: GenerateMetadata) {
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+  return genPageMetadata({ title: t('products.title'), locale });
+}
 
 export default async function ProductsPage({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale);

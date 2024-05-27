@@ -8,14 +8,25 @@
     "contact": "Liên Hệ"
   },
   "Metadata": {
+    "home": {
+      "title": "Trang chủ"
+    },
     "about-us": {
       "title": "Về VNN"
     },
     "news": {
-      "title": "Tin Tức"
+      "title": "Tin tức"
     },
     "company-history": {
-      "title": "Lịch Sử Hình Thành"
+      "title": "Lịch sử hình thành"
+    },
+    "products": {
+      "title": "Sản phẩm"
     }
+  },
+  "Footer": {
+    "address": "Địa chỉ",
+    "quick-links": "Liên kết",
+    "news": "Tin tức"
   }
 }

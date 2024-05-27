@@ -2,10 +2,11 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { Suspense } from 'react';
 import NewsList from '~/components/news/list';
 import { GenerateMetadata } from '~/types/metadata';
+import genPageMetadata from '~/utils/seo';
 
 export async function generateMetadata({ params: { locale } }: GenerateMetadata) {
   const t = await getTranslations({ locale, namespace: 'Metadata' });
-  return { title: t('news.title') };
+  return genPageMetadata({ title: t('news.title'), locale });
 }
 
 export default function NewsPage({ params: { locale } }: { params: { locale: string } }) {

@@ -1,7 +1,9 @@
-export const MENUS: {
+type MenuItem = {
   href: string;
   title: string;
-}[] = [
+};
+
+const MENUS: MenuItem[] = [
   { href: '/about-us', title: 'about-us' },
   { href: '/products', title: 'products' },
   { href: '/news', title: 'news' },
@@ -9,3 +11,5 @@ export const MENUS: {
   { href: '/career', title: 'career' },
   { href: '/contact', title: 'contact' },
 ] as const;
+
+export default MENUS;

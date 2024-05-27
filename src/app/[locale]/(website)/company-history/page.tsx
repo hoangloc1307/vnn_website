@@ -2,10 +2,11 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { Suspense } from 'react';
 import History from '~/components/company-history/history';
 import { GenerateMetadata } from '~/types/metadata';
+import genPageMetadata from '~/utils/seo';
 
 export async function generateMetadata({ params: { locale } }: GenerateMetadata) {
   const t = await getTranslations({ locale, namespace: 'Metadata' });
-  return { title: t('company-history.title') };
+  return genPageMetadata({ title: t('company-history.title'), locale });
 }
 
 export default function CompanyHistory({ params: { locale } }: { params: { locale: string } }) {

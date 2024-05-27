@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import LanguageSwitcher from '~/components/language-switchert';
 import NavigationLink from '~/components/navigation-link';
-import { MENUS } from '~/constants/menus';
+import MENUS from '~/constants/menus';
 import useScrollPosition from '~/hooks/useScrollPosition';
 
 export default function NavLinks() {

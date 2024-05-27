@@ -1,14 +1,16 @@
-import { faFacebookF, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { faAngleRight, faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookF, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { MENUS } from '~/constants/menus';
-// import { postList } from '~/fake/posts';
+import FooterAddress from '~/components/footer/address';
+import MENUS from '~/constants/menus';
+import siteMetadata from '~/constants/siteMetadata';
 import { Link } from '~/navigation';
 
 export default function Footer() {
-  const t = useTranslations('NavLinks');
+  const tFooter = useTranslations('Footer');
+  const tNavLinks = useTranslations('NavLinks');
 
   return (
     <footer className='bg-footer pt-5'>
@@ -17,26 +19,13 @@ export default function Footer() {
         <div className='grid lg:grid-cols-4'>
           {/* Address */}
           <div className='space-y-2 lg:col-span-2'>
-            <h2 className='text-base font-semibold capitalize text-white'>Address</h2>
-            <ul className='space-y-1 text-sm text-white/60'>
-              <li>
-                <FontAwesomeIcon icon={faLocationDot} size='lg' className='mr-2' /> Plot 208 Amata IP, Bien Hoa City,
-                Dong Nai Province, Vietnam
-              </li>
-              <li>
-                <FontAwesomeIcon icon={faPhone} size='lg' className='mr-2' />
-                +84-251 3936311
-              </li>
-              <li>
-                <FontAwesomeIcon icon={faEnvelope} size='lg' className='mr-2' />
-                system@nok.com.vn
-              </li>
-            </ul>
+            <h2 className='text-base font-semibold capitalize text-white'>{tFooter('address')}</h2>
+            <FooterAddress />
           </div>
 
           {/* Quick Links */}
           <div className='hidden space-y-2 lg:block'>
-            <h2 className='text-base font-semibold capitalize text-white'>Quick Links</h2>
+            <h2 className='text-base font-semibold capitalize text-white'>{tFooter('quick-links')}</h2>
             <ul className='space-y-3 text-sm'>
               {MENUS.map((item, index) => (
                 <li key={index} className='flex items-center gap-2.5 text-white/60'>
@@ -45,7 +34,7 @@ export default function Footer() {
                     className='block w-full duration-300 ease-in-out hover:text-white hover:underline'
                   >
                     <FontAwesomeIcon icon={faAngleRight} size='sm' className='mr-2' />
-                    {t(item.title)}
+                    {tNavLinks(item.title)}
                   </Link>
                 </li>
               ))}
@@ -54,7 +43,7 @@ export default function Footer() {
 
           {/* News */}
           <div className='hidden space-y-2 lg:block'>
-            <h2 className='text-base font-semibold capitalize text-white'>News</h2>
+            <h2 className='text-base font-semibold capitalize text-white'>{tFooter('news')}</h2>
             <ul className='space-y-3 text-sm'>
               {/* {[].slice(0, 5).map((post, index) => (
                 <li key={index} className='flex items-center gap-2.5 text-white/60'>
@@ -91,8 +80,9 @@ export default function Footer() {
                 <ul className='flex items-center justify-center gap-2'>
                   <li>
                     <Link
-                      href={'/'}
+                      href={siteMetadata.facebook}
                       className='group flex size-8 items-center justify-center rounded-full hover:bg-white'
+                      target='_blank'
                     >
                       <FontAwesomeIcon
                         size='xl'
@@ -103,18 +93,11 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href={'/'}
+                      href={siteMetadata.youtube}
                       className='group flex size-8 items-center justify-center rounded-full hover:bg-white'
+                      target='_blank'
                     >
                       <FontAwesomeIcon size='xl' icon={faYoutube} className='text-white/60 group-hover:text-red-500' />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href={'/'}
-                      className='group flex size-8 items-center justify-center rounded-full hover:bg-white'
-                    >
-                      <FontAwesomeIcon size='xl' icon={faTwitter} className='text-white/60 group-hover:text-blue-400' />
                     </Link>
                   </li>
                 </ul>

@@ -1,7 +1,13 @@
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { Suspense } from 'react';
 import CarouselSkeleton from '~/components/carousel/skeleton';
 import NewsCarouselWrapper from '~/components/carousel/wrapper';
+import { GenerateMetadata } from '~/types/metadata';
+import genPageMetadata from '~/utils/seo';
+
+export async function generateMetadata({ params: { locale } }: GenerateMetadata) {
+  return genPageMetadata({ locale });
+}
 
 export default async function Home({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale);
